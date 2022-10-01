@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>User account</title>
+  <link rel="stylesheet" th:href="@{/main.css}">
+</head>
+<body>
+<div th:replace="layouts/header :: header" ></div>
+<main class="main">
+  <h1>Change data</h1>
+  <form method="post" action="/user/update">
+    <input type="text" name="email" th:value="${user.email}" placeholder="enter email">
+    <input type="password" name="password" placeholder="enter password">
+    <select name="roles">
+      <option>-------------</option>
+      <option>ADMINISTRATOR</option>
+      <option>MODERATOR</option>
+      <option>USER</option>
+          </select>
+    <button type="submit">Edit data</button>
+  </form>
+</main>
+
+<hr>
+<center><footer>Copyright</footer></center>
+</body>
+</html>
